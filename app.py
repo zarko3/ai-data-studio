@@ -816,4 +816,6 @@ with gr.Blocks(title="AI Data Studio - Dataset Creator & Prep Suite") as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="127.0.0.1", server_port=7865)
+    host = os.environ.get("HOST", "0.0.0.0")
+    port = int(os.environ.get("PORT", "7865"))
+    demo.launch(server_name=host, server_port=port)
